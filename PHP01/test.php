@@ -19,12 +19,10 @@ $password = "";
 $dbselect = "dbmessages";
 $dbconnect = "mysql:host=".$dbhost.";dbname=".$dbselect;
 
-$this->database = new PDO($dbconnect,$account,$password);
-if($this->database){
-    //echo "DB connected.";
-}
-else{
-    //echo "DB connect fail";
-    }
+$database = new PDO($dbconnect,$account,$password);
+
+$name = $_POST["name"];
+$query = "INSERT INTO `questionnaire`(`reason`, `time`, `gender`,'email') VALUES ('$reason','$name','$gender','$email')";
+$database->exec($query);
 
 ?>
