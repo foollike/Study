@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Customer Feedback</title>      
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+    </head>
+
+    <body>
+        <h1>Customer Feedback</h1>
+        <p>Please tell us what you think</p>
+        <form action="processfeedback.php" method="POST">
+            <table>
+                <tr>
+                    <td><b>Your name</b></td>
+                </tr>
+                <tr>
+                    <td><input name="name" type="text"></td>
+                </tr>
+            </tr> 
+            <tr>
+                <td></td>                    
+            </tr>
+            <tr>
+                <td></td>                    
+            </tr>
+                <tr>
+                    <td><b>Your email address:</b></td>
+                </tr>
+                <tr>
+                    <td><input name="email" type="text"></td>
+                </tr>
+                <tr>
+                    <td></td>                    
+                </tr>
+                <tr>
+                    <td></td>                    
+                </tr>
+                <tr>
+                    <td><b>Your feedback:</b></td>
+                </tr>
+                <tr>
+                    <td><textarea name="feedback" id="" cols="60" rows="12"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Send Feedback"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
