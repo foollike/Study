@@ -14,12 +14,6 @@ $name = $_POST["name"];
 $gender = $_POST["gender"];
 $email = $_POST["email"];
 
-
-echo $reason."<br />";
-echo $name."<br />";
-echo $gender."<br />";
-echo $email."<br />";
-
 $database = null;
 
 $dbhost = "localhost"; //127.0.0.1
@@ -35,12 +29,23 @@ $query = "INSERT INTO `questionnaire`(`reason`, `name`, `gender`,`email`) VALUES
 $database->exec($query);
 
 $sql = "SELECT * FROM `questionnaire`";
+$result = $database->query($sql);
+$row=$result->fetchAll();
 
+for($x=0;$x<count($row);$x++)
+{
+    $temp = $row[$x];
+
+    echo "姓名: ".$temp['name']."<br />";
+    echo "姓別: ".$temp['gender']."<br />";
+    echo "電子信箱: ".$temp['email']."<br />";
+    echo "為何喜歡persona5: ".$temp['reason']."<br /><br />";
+}
 
 ?>
 
 </head>
 <body>
-    
+<a href="test.html"><button>返回首頁</button></a>
 </body>
 </html>
