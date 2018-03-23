@@ -8,34 +8,56 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 
-    <script>
+    <script>        
+        function validate_required(field,alerttxt)
+        {
+        with (field)
+        {
+        if (value==null||value=="")
+        {alert(alerttxt);return false}
+        else {return true}
+        }
+        }
 
+        function validate_form(thisform)
+        {
+            with (thisform)
+            {
+            if (validate_required(name,"請填上姓名")==false)
+            {name.focus();return false}
+            else if(validate_required(email,"請填上信箱")==false)
+            {email.focus();return false}
+            else if(validate_required(reason,"請填上原因")==false)
+            {reason.focus();return false}
+            }
+        }
+        
     </script>
 </head>
 <body>
     <h1>Persona 5 問卷調查</h1>
 
-
-    <form method="POST" action="test.php">
+    <form method="POST" action="test.php" name="form1" onsubmit="return validate_form(this)">
         
-    <ul>
-        <li><label for="reason">為何喜歡persona5:</label>
-        <input type="text" name="reason" id="reason"></li><br />
-        
+    <ul>                
         <li><label for="name">姓名:</label>
         <input type="text" name="name" id="name"></li><br />
 
         <li><label for="gender">性別:</label>
-        男<input type="radio" name="gender" id="gender" value="男">
-        女<input type="radio" name="gender" id="gender" value="女"></li><br />
-
+        男<input type="radio" name="gender" id="male" value="男" >
+        女<input type="radio" name="gender" id="female" value="女"></li><br />
+        
 
         <li><label for="email">E-mail:</label>
-        <input type="text" name="email" id="email"></li>
+        <input type="text" name="email" id="email"></li><br />
+        
+        <li><label for="reason">為何喜歡persona5:</label></li>
+        <textarea type="text" style="width:300px; height:100px;"  name="reason" id="reason"></textarea>
         
     </ul> 
 
-    &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="提交" name="submit"><br /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="提交" name="submit" id="submit"><br /><br />
 
         <a href=""><img src="p5.jpg"></a>
 

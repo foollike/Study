@@ -9,10 +9,10 @@
     <script src="main.js"></script>
 <?php
 
-$reason = $_POST["reason"];
 $name = $_POST["name"];
 $gender = $_POST["gender"];
 $email = $_POST["email"];
+$reason = $_POST["reason"];
 
 $database = null;
 
