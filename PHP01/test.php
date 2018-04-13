@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-<?php
 
+</head>
+<body>
+
+<?php
 $name = $_POST["name"];
 $gender = $_POST["gender"];
 $email = $_POST["email"];
@@ -32,7 +35,5 @@ header("location: list.php");
 
 ?>
 
-</head>
-<body>
 </body>
 </html>

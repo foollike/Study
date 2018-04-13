@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
+</head>
+<body>
+<div style="overflow:scroll;height:700px;width:500px;">
 <?php
-
 $database = null;
 
 $dbhost = "localhost"; //127.0.0.1
@@ -27,15 +29,14 @@ for($x=0;$x<count($row);$x++)
 {
     $temp = $row[$x];
 
-    echo "姓名: ".$temp['name']."<br />";
+    echo "<p style='color:red;'>姓名: ".$temp['name']."</p>";
     echo "姓別: ".$temp['gender']."<br />";
     echo "電子信箱: ".$temp['email']."<br />";
     echo "為何喜歡persona5: ".$temp['reason']."<br /><br />";
 }
-
 ?>
 
-</head>
-<body>
+</div>
+<br/>
 <a href="test.html"><button>返回首頁</button></a>
 </body>
